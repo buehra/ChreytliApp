@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UHg-O6-69w">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Hub-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Hub" id="BYZ-38-t0r" customClass="ViewController" customModule="ChreytliV1" customModuleProvider="target" colorLabel="IBBuiltInLabel-Yellow" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" colorLabel="IBBuiltInLabel-Yellow"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6t-Yj-2nG">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textShadowColor" red="0.82819367499999996" green="1" blue="0.38669328409999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Chreytli Hub" id="F95-TQ-vJv">
+                                        <barButtonItem key="rightBarButtonItem" title="Login" id="Uen-90-eap">
+                                            <connections>
+                                                <action selector="pressedLogin:" destination="BYZ-38-t0r" id="whJ-8x-bys"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6k-kt-nNW">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t3v-rJ-Stf">
+                                    <size key="itemSize" width="340" height="254"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="s5t-ax-ATD" customClass="CustomCellView" customModule="ChreytliV1" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="0.0" width="340" height="254"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="254"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOj-nq-7oV">
+                                                    <rect key="frame" x="0.0" y="35" width="340" height="183"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-Io-8lQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="35"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ss6-J9-lbE">
+                                                    <rect key="frame" x="0.0" y="217" width="340" height="37"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="TextAuthor" destination="ss6-J9-lbE" id="PUc-2s-WUw"/>
+                                            <outlet property="image" destination="iOj-nq-7oV" id="ZeP-tz-EgX"/>
+                                            <outlet property="textDienst" destination="Szc-Io-8lQ" id="6cY-If-OPs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="s6k-kt-nNW" firstAttribute="top" secondItem="q6t-Yj-2nG" secondAttribute="bottom" id="0iF-lK-zKU"/>
+                            <constraint firstItem="s6k-kt-nNW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BBG-l0-RYv"/>
+                            <constraint firstItem="q6t-Yj-2nG" firstAttribute="leading" secondItem="s6k-kt-nNW" secondAttribute="leading" id="DnR-GO-nO8"/>
+                            <constraint firstItem="q6t-Yj-2nG" firstAttribute="trailing" secondItem="s6k-kt-nNW" secondAttribute="trailing" id="GWK-YA-kai"/>
+                            <constraint firstItem="q6t-Yj-2nG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KP4-zP-Cpe"/>
+                            <constraint firstAttribute="trailing" secondItem="q6t-Yj-2nG" secondAttribute="trailing" id="Lwi-ic-2rV"/>
+                            <constraint firstItem="s6k-kt-nNW" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ZRE-p5-LVW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hub" image="ic_menu_home.png" id="mUy-sR-IYB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectView" destination="s6k-kt-nNW" id="g2W-kL-Z0J"/>
+                        <outlet property="login" destination="Uen-90-eap" id="8tJ-2L-bcR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5471" y="-552"/>
+        </scene>
+        <!--Chreytli Gaming-->
+        <scene sceneID="w8Z-VL-Wvc">
+            <objects>
+                <viewController id="v7O-zv-GuN" customClass="GamingViewController" customModule="ChreytliV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mFb-ws-qpi"/>
+                        <viewControllerLayoutGuide type="bottom" id="eQ8-nN-PMP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="top" id="bj1-kq-fYx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGT-EL-fHd">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Chreytli Gaming" id="zg9-r6-zqs"/>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00J-H2-Ydm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="00J-H2-Ydm" firstAttribute="bottom" secondItem="eQ8-nN-PMP" secondAttribute="top" id="8Ts-EI-OzM"/>
+                            <constraint firstAttribute="trailing" secondItem="00J-H2-Ydm" secondAttribute="trailing" id="IwX-HF-Bgv"/>
+                            <constraint firstItem="yGT-EL-fHd" firstAttribute="trailing" secondItem="00J-H2-Ydm" secondAttribute="trailing" id="JiN-af-j1G"/>
+                            <constraint firstItem="yGT-EL-fHd" firstAttribute="leading" secondItem="bj1-kq-fYx" secondAttribute="leading" id="iAi-cC-6TP"/>
+                            <constraint firstItem="00J-H2-Ydm" firstAttribute="top" secondItem="yGT-EL-fHd" secondAttribute="bottom" id="jAO-Ey-CIB"/>
+                            <constraint firstItem="yGT-EL-fHd" firstAttribute="leading" secondItem="00J-H2-Ydm" secondAttribute="leading" id="loF-kL-AEY"/>
+                            <constraint firstItem="yGT-EL-fHd" firstAttribute="top" secondItem="mFb-ws-qpi" secondAttribute="bottom" id="pfb-Al-nc9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gaming" image="icon-games-png.png" id="alJ-1q-ZxK"/>
+                    <navigationItem key="navigationItem" title="Chreytli Gaming" id="o7d-w6-p8e"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="myBrowser" destination="00J-H2-Ydm" id="bRL-RQ-7E2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNy-bb-lKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5471" y="270"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="nsk-cf-0Gl">
+            <objects>
+                <viewController id="1d5-Cy-N1t" customClass="EventViewController" customModule="ChreytliV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QJD-0A-4TN"/>
+                        <viewControllerLayoutGuide type="bottom" id="yIh-C1-AAv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bIW-T2-XcB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJA-BU-et0">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Chreytli Events" id="aJg-an-M6f"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-Vv-B9l">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="dtj-h1-0sn">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dtj-h1-0sn" id="DDz-1H-QN6">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1d5-Cy-N1t" id="nZs-aa-qNr"/>
+                                    <outlet property="delegate" destination="1d5-Cy-N1t" id="gnc-Y9-NGk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LJA-BU-et0" secondAttribute="trailing" id="3s6-98-Ccz"/>
+                            <constraint firstItem="Lpi-Vv-B9l" firstAttribute="top" secondItem="LJA-BU-et0" secondAttribute="bottom" id="4FA-w9-Tkr"/>
+                            <constraint firstItem="LJA-BU-et0" firstAttribute="leading" secondItem="bIW-T2-XcB" secondAttribute="leading" id="RaX-kE-pVE"/>
+                            <constraint firstItem="Lpi-Vv-B9l" firstAttribute="leading" secondItem="LJA-BU-et0" secondAttribute="leading" id="ZGb-7G-c6S"/>
+                            <constraint firstItem="Lpi-Vv-B9l" firstAttribute="bottom" secondItem="yIh-C1-AAv" secondAttribute="top" id="Zxv-wY-h2K"/>
+                            <constraint firstItem="Lpi-Vv-B9l" firstAttribute="trailing" secondItem="LJA-BU-et0" secondAttribute="trailing" id="eT5-H4-m5X"/>
+                            <constraint firstItem="LJA-BU-et0" firstAttribute="top" secondItem="QJD-0A-4TN" secondAttribute="bottom" id="r94-ts-Ay4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" image="7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png" id="MfS-mr-c7u"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Lpi-Vv-B9l" id="fDP-Vb-ADe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOy-Ee-lMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5471" y="1043"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tl3-gR-eNg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UHg-O6-69w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="szG-tM-DQj"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wJZ-zh-nZn">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JXZ-RL-xVl"/>
+                        <segue destination="v7O-zv-GuN" kind="relationship" relationship="viewControllers" id="2Dh-4Z-kap"/>
+                        <segue destination="1d5-Cy-N1t" kind="relationship" relationship="viewControllers" id="ETS-77-Nwa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icy-91-ZaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4367" y="320"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png" width="48" height="48"/>
+        <image name="ic_menu_home.png" width="48" height="48"/>
+        <image name="icon-games-png.png" width="50" height="50"/>
+    </resources>
+</document>
