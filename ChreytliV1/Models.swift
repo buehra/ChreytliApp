@@ -90,6 +90,7 @@ struct Submit : JSONJoy{
         case 0?:
             dienst = "Image"
             imgUrl = "http://api.chreyt.li/"+imgUrl!
+            Url = "http://api.chreyt.li/"+Url!
         case 1?:
             dienst = "YouTube"
         case 2?:
@@ -97,6 +98,7 @@ struct Submit : JSONJoy{
         case 3?:
             dienst = "Video"
             imgUrl = "http://api.chreyt.li/"+imgUrl!
+            Url = "http://api.chreyt.li/"+Url!
         case 4?:
             dienst = "Reddit"
         case 5?:

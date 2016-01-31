@@ -59,7 +59,7 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
         
         let alertController = UIAlertController(title: events[indexPath.row].Title, message: message, preferredStyle: .Alert)
         
-        let saveAction = UIAlertAction(title: "Ok", style: .Default) { (action) in
+        let saveAction = UIAlertAction(title: "Speichern", style: .Default) { (action) in
             
             self.saveEvent(indexPath)
         }

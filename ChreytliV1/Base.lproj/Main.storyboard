@@ -3,8 +3,92 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Post Sub View Controller-->
+        <scene sceneID="Sg3-cx-O0G">
+            <objects>
+                <viewController id="C52-t3-Zfn" customClass="PostSubViewController" customModule="ChreytliV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UqN-JC-Dwb"/>
+                        <viewControllerLayoutGuide type="bottom" id="no6-LK-VVE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fYs-PT-uhR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN6-sR-7e2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Submit" id="KU0-0z-ZfT">
+                                        <barButtonItem key="backBarButtonItem" title="Hub" id="Pja-QB-DZz"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Be8-2P-tRg">
+                                            <connections>
+                                                <action selector="goBack:" destination="C52-t3-Zfn" id="9fL-EX-muR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MpB-uT-bYR">
+                                <rect key="frame" x="76" y="108" width="504" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZt-Vq-vtK">
+                                <rect key="frame" x="26" y="112" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="6dR-MJ-eiS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Flq-3M-AeZ">
+                                <rect key="frame" x="20" y="162" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Image / Video"/>
+                                    <segment title="YouTube"/>
+                                    <segment title="Spotify"/>
+                                    <segment title="Reddit"/>
+                                    <segment title="SoundCloud"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ry-Yh-xC5">
+                                <rect key="frame" x="263" y="219" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="L07-Q5-jXu"/>
+                                </constraints>
+                                <state key="normal" title="Erstellen"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2ry-Yh-xC5" firstAttribute="top" secondItem="Flq-3M-AeZ" secondAttribute="bottom" constant="29" id="1lo-Jw-gFJ"/>
+                            <constraint firstItem="MpB-uT-bYR" firstAttribute="leading" secondItem="nZt-Vq-vtK" secondAttribute="trailing" constant="8" symbolic="YES" id="2IL-dA-inW"/>
+                            <constraint firstItem="Flq-3M-AeZ" firstAttribute="trailing" secondItem="MpB-uT-bYR" secondAttribute="trailing" id="2OM-nV-Shb"/>
+                            <constraint firstAttribute="trailing" secondItem="JN6-sR-7e2" secondAttribute="trailing" id="9Tn-OJ-JKM"/>
+                            <constraint firstItem="JN6-sR-7e2" firstAttribute="top" secondItem="UqN-JC-Dwb" secondAttribute="bottom" id="CRC-MF-caw"/>
+                            <constraint firstItem="Flq-3M-AeZ" firstAttribute="leading" secondItem="fYs-PT-uhR" secondAttribute="leadingMargin" id="Hck-aT-Emt"/>
+                            <constraint firstItem="Flq-3M-AeZ" firstAttribute="top" secondItem="MpB-uT-bYR" secondAttribute="bottom" constant="24" id="LvG-d7-REp"/>
+                            <constraint firstItem="nZt-Vq-vtK" firstAttribute="leading" secondItem="fYs-PT-uhR" secondAttribute="leadingMargin" constant="6" id="REm-Tr-Wai"/>
+                            <constraint firstItem="MpB-uT-bYR" firstAttribute="top" secondItem="JN6-sR-7e2" secondAttribute="bottom" constant="44" id="SPW-6N-Wix"/>
+                            <constraint firstItem="nZt-Vq-vtK" firstAttribute="centerY" secondItem="MpB-uT-bYR" secondAttribute="centerY" id="Ze6-rv-iCz"/>
+                            <constraint firstItem="2ry-Yh-xC5" firstAttribute="centerX" secondItem="Flq-3M-AeZ" secondAttribute="centerX" id="b20-1o-T70"/>
+                            <constraint firstItem="Flq-3M-AeZ" firstAttribute="centerX" secondItem="JN6-sR-7e2" secondAttribute="centerX" id="p8N-In-ash"/>
+                            <constraint firstItem="Flq-3M-AeZ" firstAttribute="top" secondItem="nZt-Vq-vtK" secondAttribute="bottom" constant="29" id="rFP-k6-vgs"/>
+                            <constraint firstItem="JN6-sR-7e2" firstAttribute="leading" secondItem="fYs-PT-uhR" secondAttribute="leading" id="sGF-8L-5lW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="beu-NL-K2X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a21-BM-aIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6180" y="-1124"/>
+        </scene>
         <!--Hub-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -26,6 +110,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Chreytli Hub" id="F95-TQ-vJv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="EtD-m2-EI8">
+                                            <connections>
+                                                <segue destination="C52-t3-Zfn" kind="show" id="mfl-Tz-Ylc"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Login" id="Uen-90-eap">
                                             <connections>
                                                 <action selector="pressedLogin:" destination="BYZ-38-t0r" id="whJ-8x-bys"/>
@@ -54,14 +143,14 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOj-nq-7oV">
                                                     <rect key="frame" x="0.0" y="35" width="340" height="183"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-Io-8lQ">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-Io-8lQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="340" height="35"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ss6-J9-lbE">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ss6-J9-lbE">
                                                     <rect key="frame" x="0.0" y="217" width="340" height="37"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,11 +185,63 @@
                     <connections>
                         <outlet property="collectView" destination="s6k-kt-nNW" id="g2W-kL-Z0J"/>
                         <outlet property="login" destination="Uen-90-eap" id="8tJ-2L-bcR"/>
+                        <segue destination="t9x-KD-kgC" kind="show" identifier="showSubmission" id="P6b-pR-6nx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5471" y="-552"/>
+            <point key="canvasLocation" x="5373" y="-572"/>
+        </scene>
+        <!--Submit View Controller-->
+        <scene sceneID="aov-7M-rjm">
+            <objects>
+                <viewController id="t9x-KD-kgC" customClass="SubmitViewController" customModule="ChreytliV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l4I-ss-JNl"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Hp-dZ-gDv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k8D-Jv-lCk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsa-AT-cX2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Submission" id="jxw-3a-Fag">
+                                        <barButtonItem key="backBarButtonItem" title="Hub" id="qnI-a3-42s"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Z0Z-b8-2Ae">
+                                            <connections>
+                                                <action selector="goBack:" destination="t9x-KD-kgC" id="pKq-Nd-AI8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-fU-4Y2">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n2f-fU-4Y2" firstAttribute="trailing" secondItem="dsa-AT-cX2" secondAttribute="trailing" id="7Xu-NP-AxN"/>
+                            <constraint firstItem="n2f-fU-4Y2" firstAttribute="leading" secondItem="k8D-Jv-lCk" secondAttribute="leading" id="Dcc-p5-1eS"/>
+                            <constraint firstAttribute="trailing" secondItem="n2f-fU-4Y2" secondAttribute="trailing" id="HOR-0A-SZs"/>
+                            <constraint firstItem="n2f-fU-4Y2" firstAttribute="bottom" secondItem="1Hp-dZ-gDv" secondAttribute="top" id="Mjz-MC-7qs"/>
+                            <constraint firstItem="n2f-fU-4Y2" firstAttribute="leading" secondItem="dsa-AT-cX2" secondAttribute="leading" id="Uvh-tL-csh"/>
+                            <constraint firstItem="n2f-fU-4Y2" firstAttribute="top" secondItem="dsa-AT-cX2" secondAttribute="bottom" id="aDc-hA-n9K"/>
+                            <constraint firstItem="dsa-AT-cX2" firstAttribute="top" secondItem="l4I-ss-JNl" secondAttribute="bottom" id="sC6-ds-wVt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="v4h-sl-z6f"/>
+                    <connections>
+                        <outlet property="webBrowser" destination="n2f-fU-4Y2" id="B4U-LW-FXT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzJ-rW-aGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6180" y="-450"/>
         </scene>
         <!--Chreytli Gaming-->
         <scene sceneID="w8Z-VL-Wvc">
@@ -162,6 +303,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJA-BU-et0">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

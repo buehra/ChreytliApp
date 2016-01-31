@@ -15,6 +15,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var headers = [String:String]()
     var pages : Int = 0
+    var index : Int = 0
     
     var submissions = [Submit]()
     
@@ -51,6 +52,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("Cell \(indexPath.row) selected")
+        index = indexPath.row
+        performSegueWithIdentifier("showSubmission", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showSubmission" {
+            let vc = segue.destinationViewController as! SubmitViewController
+            
+            vc.URL = submissions[index].Url!
+            vc.type = submissions[index].type!
+            
+        }
     }
     
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
@@ -71,6 +84,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             alertController.addAction(cancelAction)
             
             self.presentViewController(alertController, animated: true, completion: nil)
+
         
         }else{
         
@@ -80,6 +94,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             ]
             
             login.title = "Logout"
+            
         }
     }
     
@@ -134,12 +149,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             alertController.addTextFieldWithConfigurationHandler { (textField) in
                 textField.placeholder = "Username"
-                textField.keyboardType = UIKeyboardType.NumbersAndPunctuation
             }
             
             alertController.addTextFieldWithConfigurationHandler { (textField) in
                 textField.placeholder = "Password"
-                textField.keyboardType = UIKeyboardType.NumbersAndPunctuation
+                textField.secureTextEntry = true
             }
             
             self.presentViewController(alertController, animated: true, completion: nil)
