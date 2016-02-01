@@ -9,13 +9,14 @@
 import UIKit
 import Alamofire
 import JSONJoy
-import LocalAuthentication
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var headers = [String:String]()
     var pages : Int = 0
     var index : Int = 0
+    
+    var viewDidAllreadyViewd : Bool = true
     
     var submissions = [Submit]()
     
@@ -30,6 +31,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectView.dataSource = self
         
         getSubmissions()
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        if viewDidAllreadyViewd{
+            
+            SwiftLoading().showLoading()
+            
+            viewDidAllreadyViewd = false
+        
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,11 +59,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.TextAuthor.text = submissions[indexPath.row].author?.name
         cell.image.imageFromUrl(submissions[indexPath.row].imgUrl!)
         cell.textDienst.text = submissions[indexPath.row].dienst
+        
+        let buttonTitel : String = String(submissions[indexPath.row].score!)+"♥"
+        cell.scoreBtn.setTitle(buttonTitel, forState: UIControlState.Normal)
+        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("Cell \(indexPath.row) selected")
+
         index = indexPath.row
         performSegueWithIdentifier("showSubmission", sender: self)
     }
@@ -100,8 +116,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     func getSubmissions(){
+        
+        if viewDidAllreadyViewd == false{
+        
+            SwiftLoading().showLoading()
+        }
+        
+        
     
-        Alamofire.request(.GET, "http://api.chreyt.li/api/Submissions?page="+String(pages), headers: headers)
+        Alamofire.request(.GET, "http://api.chreyt.li/api/Submissions?page="+String(pages)+"&filter=sfw&filter=nsfw&filter=nsfl", headers: headers)
             .responseJSON { response in
                 
                 if response.result.isSuccess {
@@ -115,11 +138,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                         }
                         
                         self.collectView.reloadData()
+                        SwiftLoading().hideLoading()
 
                     }
-   
+                }else {
+                    let delayInSeconds = 10.0
+                    let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+                    dispatch_after(delay, dispatch_get_main_queue()) {
+                        self.getSubmissions()
+                        SwiftLoading().hideLoading()}
                 }
-        }
+            }
     }
 
 
@@ -135,6 +164,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             alertController.addAction(cancelAction)
             
             let submitAction = UIAlertAction(title: "Login", style: .Default) { (action) in
+                
+                SwiftLoading().showLoading()
                 
                 if let latitude = alertController.textFields![0].text, longitude = alertController.textFields![1].text{
                     let username : String = latitude
@@ -177,14 +208,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func getTocken(username:String, password:String){
         
+        
         let body = ["grant_type": "password", "userName": username, "password": password]
         
         Alamofire.request(.POST, "http://api.chreyt.li/Token", parameters: body)
             .responseJSON { response in
                 
                 if response.result.isSuccess {
+                    
                     let tocken = Tocken(JSONDecoder(response.result.value!))
                     self.setHeader(tocken)
+                    SwiftLoading().hideLoading()
                 }
         }
     }

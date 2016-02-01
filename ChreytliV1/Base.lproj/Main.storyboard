@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="width" constant="42" id="6dR-MJ-eiS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Flq-3M-AeZ">
@@ -152,17 +152,27 @@
                                                 </textView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ss6-J9-lbE">
                                                     <rect key="frame" x="0.0" y="217" width="340" height="37"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnW-5c-Xyz">
+                                                    <rect key="frame" x="290" y="223" width="50" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="1 ♥"/>
+                                                    <connections>
+                                                        <action selector="pressedFav:" destination="s5t-ax-ATD" eventType="touchUpInside" id="EYU-OY-Dpe"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
                                             <outlet property="TextAuthor" destination="ss6-J9-lbE" id="PUc-2s-WUw"/>
                                             <outlet property="image" destination="iOj-nq-7oV" id="ZeP-tz-EgX"/>
+                                            <outlet property="pressedFav" destination="mnW-5c-Xyz" id="eON-pN-qJJ"/>
+                                            <outlet property="scoreBtn" destination="mnW-5c-Xyz" id="PNc-5v-Lii"/>
                                             <outlet property="textDienst" destination="Szc-Io-8lQ" id="6cY-If-OPs"/>
                                         </connections>
                                     </collectionViewCell>

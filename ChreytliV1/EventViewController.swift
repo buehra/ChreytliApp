@@ -104,6 +104,7 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     
     func getEvents(){
+        SwiftLoading().showLoading()
         
         Alamofire.request(.GET, "http://api.chreyt.li/api/events")
             .responseJSON { response in
@@ -118,6 +119,7 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
                     }
                     
                     self.tableView.reloadData()
+                    SwiftLoading().hideLoading()
                 }
         }
     }

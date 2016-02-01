@@ -14,6 +14,7 @@
 		8A07F7761C5D050A0019856C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07F7751C5D050A0019856C /* EventViewController.swift */; };
 		8A8C41791C5B99D60050B5D4 /* GamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C41781C5B99D60050B5D4 /* GamingViewController.swift */; };
 		8A8C41831C5BA71B0050B5D4 /* home.html in Resources */ = {isa = PBXBuildFile; fileRef = 8A8C41821C5BA71B0050B5D4 /* home.html */; };
+		8ABCD1361C5F6E1400B0FB2D /* SwiftLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABCD1351C5F6E1400B0FB2D /* SwiftLoading.swift */; };
 		8ACDB0EB1C5E1F650088A0AC /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDB0EA1C5E1F650088A0AC /* SubmitViewController.swift */; };
 		8ACDB0ED1C5E2A020088A0AC /* PostSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDB0EC1C5E2A020088A0AC /* PostSubViewController.swift */; };
 		8ACDE0D81C5521AD0013F888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDE0D71C5521AD0013F888 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		8A07F7751C5D050A0019856C /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8A8C41781C5B99D60050B5D4 /* GamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamingViewController.swift; sourceTree = "<group>"; };
 		8A8C41821C5BA71B0050B5D4 /* home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = home.html; sourceTree = "<group>"; };
+		8ABCD1351C5F6E1400B0FB2D /* SwiftLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoading.swift; sourceTree = "<group>"; };
 		8ACDB0EA1C5E1F650088A0AC /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		8ACDB0EC1C5E2A020088A0AC /* PostSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSubViewController.swift; sourceTree = "<group>"; };
 		8ACDE0D41C5521AD0013F888 /* ChreytliV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChreytliV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				8A07F7771C5D182A0019856C /* ViewControllers */,
 				8A07F76F1C5CF4FB0019856C /* CustomCellView.swift */,
 				8ACDE0D71C5521AD0013F888 /* AppDelegate.swift */,
+				8ABCD1351C5F6E1400B0FB2D /* SwiftLoading.swift */,
 				8ACDE0DB1C5521AD0013F888 /* Main.storyboard */,
 				8ACDE0DE1C5521AD0013F888 /* Assets.xcassets */,
 				8ACDE0E01C5521AD0013F888 /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				8A07F7701C5CF4FB0019856C /* CustomCellView.swift in Sources */,
 				8ACDB0ED1C5E2A020088A0AC /* PostSubViewController.swift in Sources */,
 				8A8C41791C5B99D60050B5D4 /* GamingViewController.swift in Sources */,
+				8ABCD1361C5F6E1400B0FB2D /* SwiftLoading.swift in Sources */,
 				8A07F7761C5D050A0019856C /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
