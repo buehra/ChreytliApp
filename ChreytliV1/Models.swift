@@ -77,6 +77,7 @@ struct Submit : JSONJoy{
     var score : Int?
     var type : Int?
     var dienst : String?
+    var color : UIColor?
     
     init() {
         
@@ -88,23 +89,30 @@ struct Submit : JSONJoy{
         type = decoder["type"].integer
         switch type {
         case 0?:
-            dienst = "Image"
+            dienst = "\u{f03e} Image"
             imgUrl = "http://api.chreyt.li/"+imgUrl!
             Url = "http://api.chreyt.li/"+Url!
+            color = UIColor.blueColor()
         case 1?:
-            dienst = "YouTube"
+            dienst = "\u{f16a} YouTube"
+            color = UIColor.redColor()
         case 2?:
-            dienst = "Spotify"
+            dienst = "\u{f1bc} Spotify"
+            color = UIColor.greenColor()
         case 3?:
-            dienst = "Video"
+            dienst = "\u{f03e} Video"
             imgUrl = "http://api.chreyt.li/"+imgUrl!
             Url = "http://api.chreyt.li/"+Url!
+            color = UIColor.blueColor()
         case 4?:
-            dienst = "Reddit"
+            dienst = "\u{f281} Reddit"
+            color = UIColor.purpleColor()
         case 5?:
-            dienst = "SoundCloud"
+            dienst = "\u{f1be} SoundCloud"
+            color = UIColor.orangeColor()
         default:
-            dienst = "UnKnown"
+            dienst = "\u{f128} UnKnown"
+            color = UIColor.yellowColor()
         }
         author = Author(decoder["author"])
     

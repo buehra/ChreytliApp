@@ -17,6 +17,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var index : Int = 0
     
     var viewDidAllreadyViewd : Bool = true
+    var allEntries : Bool = false
     
     var submissions = [Submit]()
     
@@ -59,8 +60,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.TextAuthor.text = submissions[indexPath.row].author?.name
         cell.image.imageFromUrl(submissions[indexPath.row].imgUrl!)
         cell.textDienst.text = submissions[indexPath.row].dienst
+        cell.textDienst.backgroundColor = submissions[indexPath.row].color
         
-        let buttonTitel : String = String(submissions[indexPath.row].score!)+"♥"
+        let buttonTitel : String = String(submissions[indexPath.row].score!)+" \u{f004}"
         cell.scoreBtn.setTitle(buttonTitel, forState: UIControlState.Normal)
         
         return cell
@@ -122,6 +124,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             SwiftLoading().showLoading()
         }
         
+        if self.allEntries{
+            
+            exit(0)
+        }
         
     
         Alamofire.request(.GET, "http://api.chreyt.li/api/Submissions?page="+String(pages)+"&filter=sfw&filter=nsfw&filter=nsfl", headers: headers)
@@ -140,7 +146,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                         self.collectView.reloadData()
                         SwiftLoading().hideLoading()
 
-                    }
+                    }else{
+                        self.allEntries = true
+                        SwiftLoading().hideLoading()}
                 }else {
                     let delayInSeconds = 10.0
                     let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))

@@ -23,6 +23,7 @@
 		8ACDE0DF1C5521AD0013F888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ACDE0DE1C5521AD0013F888 /* Assets.xcassets */; };
 		8ACDE0E21C5521AD0013F888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACDE0E01C5521AD0013F888 /* LaunchScreen.storyboard */; };
 		8ACDE0EB1C55260E0013F888 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDE0EA1C55260E0013F888 /* Models.swift */; };
+		8AF6AA2E1C5FC25500AEF734 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF6AA2D1C5FBC5300AEF734 /* fontawesome-webfont.ttf */; };
 		9C5A8C9B419A79CF049DB564 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46C1693DE0E75B4D540C404 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		8ACDE0E11C5521AD0013F888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ACDE0E31C5521AD0013F888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ACDE0EA1C55260E0013F888 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8AF6AA2D1C5FBC5300AEF734 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		C46C1693DE0E75B4D540C404 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 		8ACDE0D61C5521AD0013F888 /* ChreytliV1 */ = {
 			isa = PBXGroup;
 			children = (
+				8AF6AA2C1C5FBC3E00AEF734 /* Font */,
 				8A07F7601C5CEEA40019856C /* Image */,
 				8ACDE0E91C5526020013F888 /* Models */,
 				8A07F7771C5D182A0019856C /* ViewControllers */,
@@ -134,6 +137,14 @@
 				8ACDE0EA1C55260E0013F888 /* Models.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8AF6AA2C1C5FBC3E00AEF734 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8AF6AA2D1C5FBC5300AEF734 /* fontawesome-webfont.ttf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		AD06251BF3642374563F44EC /* Pods */ = {
@@ -207,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF6AA2E1C5FC25500AEF734 /* fontawesome-webfont.ttf in Resources */,
 				8ACDE0E21C5521AD0013F888 /* LaunchScreen.storyboard in Resources */,
 				8A8C41831C5BA71B0050B5D4 /* home.html in Resources */,
 				8ACDE0DF1C5521AD0013F888 /* Assets.xcassets in Resources */,

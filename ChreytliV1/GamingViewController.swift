@@ -11,14 +11,32 @@ import UIKit
 class GamingViewController: UIViewController{
 
     @IBOutlet weak var myBrowser: UIWebView!
+    @IBOutlet weak var refresh: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let teas = [ NSFontAttributeName: UIFont(name: "FontAwesome", size: 20)!]
+        
+        refresh.setTitleTextAttributes(teas, forState: UIControlState.Normal)
+        refresh.title = "\u{f021}"
+        
+        browserLoad()
+
+    }
+    
+    
+    @IBAction func refreshTS(sender: AnyObject) {
+        
+        browserLoad()
+        
+    }
+    
+    func browserLoad(){
         
         let localfilePath = NSBundle.mainBundle().URLForResource("home", withExtension: "html");
         let myRequest = NSURLRequest(URL: localfilePath!);
         myBrowser.loadRequest(myRequest);
-
+    
     }
     
     override func didReceiveMemoryWarning() {

@@ -14,7 +14,9 @@ class CustomCellView: UICollectionViewCell {
     @IBOutlet weak var textDienst: UITextView!
     @IBOutlet weak var scoreBtn: UIButton!
     @IBOutlet weak var pressedFav: UIButton!
+    
+    
     @IBAction func pressedFav(sender: AnyObject) {
-        print("test")
+        //code
     }
 }

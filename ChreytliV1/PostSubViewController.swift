@@ -10,12 +10,13 @@ import UIKit
 
 class PostSubViewController: UIViewController{
     
+    @IBOutlet weak var textURL: UITextField!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        textURL.text = "\u{f16a} Facebook"
     }
     
 
