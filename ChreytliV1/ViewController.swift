@@ -12,6 +12,7 @@ import JSONJoy
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var tabItemHub: UITabBarItem!
     var headers = [String:String]()
     var pages : Int = 0
     var index : Int = 0
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Do any additional setup after loading the view, typically from a nib.
         collectView.delegate = self
         collectView.dataSource = self
+        
+        //tabItemHub.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
         
         getSubmissions()
         

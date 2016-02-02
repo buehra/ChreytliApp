@@ -15,6 +15,13 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     var savedEventId : String = ""
     var events = [Event]()
+    
+    struct Objects {
+        var sectionName : String!
+        var sectionObjects: [Event]!
+    }
+    
+    var objectsArray = [Objects]()
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +30,23 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        
+        let eventInStart = [Event]()
+        
+        
+        objectsArray = [Objects(sectionName: "Januar", sectionObjects: eventInStart),
+            Objects(sectionName: "Februar", sectionObjects: eventInStart),
+            Objects(sectionName: "März", sectionObjects: eventInStart),
+            Objects(sectionName: "April", sectionObjects: eventInStart),
+            Objects(sectionName: "Mai", sectionObjects: eventInStart),
+            Objects(sectionName: "Juni", sectionObjects: eventInStart),
+            Objects(sectionName: "Juli", sectionObjects: eventInStart),
+            Objects(sectionName: "August", sectionObjects: eventInStart),
+            Objects(sectionName: "September", sectionObjects: eventInStart),
+            Objects(sectionName: "Oktober", sectionObjects: eventInStart),
+            Objects(sectionName: "November", sectionObjects: eventInStart),
+            Objects(sectionName: "Dezember", sectionObjects: eventInStart)]
+        
         getEvents()
         
     }
@@ -33,31 +57,38 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return objectsArray.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return objectsArray[section].sectionObjects.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
 
-        cell.textLabel?.text = events[indexPath.row].Title
+        cell.textLabel?.text = objectsArray[indexPath.section].sectionObjects[indexPath.row].Title
         
         return cell
         
     }
+    
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return objectsArray[section].sectionName
+    }
+    
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
-        let DateInFormat = dateFormatter.stringFromDate(events[indexPath.row].Start!)
-        let DateInFormat2 = dateFormatter.stringFromDate(events[indexPath.row].End!)
+        let DateInFormat = dateFormatter.stringFromDate(objectsArray[indexPath.section].sectionObjects[indexPath.row].Start!)
+        let DateInFormat2 = dateFormatter.stringFromDate(objectsArray[indexPath.section].sectionObjects[indexPath.row].End!)
         
         let message = "Start "+DateInFormat+" bis\n"+DateInFormat2
         
-        let alertController = UIAlertController(title: events[indexPath.row].Title, message: message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: objectsArray[indexPath.section].sectionObjects[indexPath.row].Title, message: message, preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Speichern", style: .Default) { (action) in
             
@@ -79,7 +110,7 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
         if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
             eventStore.requestAccessToEntityType(.Event, completion: {
                 granted, error in
-                self.createEvent(eventStore, title: self.events[indexPath.row].Title!, startDate: self.events[indexPath.row].Start!, endDate: self.events[indexPath.row].End!)
+                self.createEvent(eventStore, title: self.objectsArray[indexPath.section].sectionObjects[indexPath.row].Title!, startDate: self.objectsArray[indexPath.section].sectionObjects[indexPath.row].Start!, endDate: self.objectsArray[indexPath.section].sectionObjects[indexPath.row].End!)
                 
                 let alertController = UIAlertController(title: "Erfolgreich", message: "Event wurde gespeichert!", preferredStyle: .Alert)
                 
@@ -90,7 +121,7 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
                 
             })
         } else {
-            self.createEvent(eventStore, title: self.events[indexPath.row].Title!, startDate: self.events[indexPath.row].Start!, endDate: self.events[indexPath.row].End!)
+            self.createEvent(eventStore, title: self.objectsArray[indexPath.section].sectionObjects[indexPath.row].Title!, startDate: self.objectsArray[indexPath.section].sectionObjects[indexPath.row].Start!, endDate: self.objectsArray[indexPath.section].sectionObjects[indexPath.row].End!)
             
             let alertController = UIAlertController(title: "Erfolgreich", message: "Event wurde gespeichert!", preferredStyle: .Alert)
             
@@ -117,11 +148,49 @@ class EventViewController: UIViewController , UITableViewDelegate, UITableViewDa
                         self.events.append(name)
     
                     }
+                    self.groupEvents()
+                    
                     
                     self.tableView.reloadData()
                     SwiftLoading().hideLoading()
                 }
         }
+    }
+    
+    func groupEvents(){
+        
+        
+        self.events.sortInPlace({ $0.Start!.compare($1.Start!) == NSComparisonResult.OrderedAscending })
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM"
+        
+        let dateFormatterYear = NSDateFormatter()
+        dateFormatterYear.dateFormat = "YYYY"
+        
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
+        let year =  components.year
+        
+        for event in self.events{
+            
+            let index = Int(dateFormatter.stringFromDate(event.Start!))! - 1
+            
+            
+            if Int(dateFormatterYear.stringFromDate(event.Start!)) == year{
+                
+                objectsArray[index].sectionObjects.append(event)
+            
+            }
+            
+            
+        }
+        
+        self.events.removeAll()
+        
+    
     }
     
     func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {

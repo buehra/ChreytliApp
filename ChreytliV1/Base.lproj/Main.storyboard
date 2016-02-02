@@ -74,6 +74,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2ry-Yh-xC5" firstAttribute="top" secondItem="Flq-3M-AeZ" secondAttribute="bottom" constant="29" id="1lo-Jw-gFJ"/>
                             <constraint firstItem="MpB-uT-bYR" firstAttribute="leading" secondItem="nZt-Vq-vtK" secondAttribute="trailing" constant="8" symbolic="YES" id="2IL-dA-inW"/>
@@ -90,13 +91,22 @@
                             <constraint firstItem="Flq-3M-AeZ" firstAttribute="top" secondItem="nZt-Vq-vtK" secondAttribute="bottom" constant="29" id="rFP-k6-vgs"/>
                             <constraint firstItem="JN6-sR-7e2" firstAttribute="leading" secondItem="fYs-PT-uhR" secondAttribute="leading" id="sGF-8L-5lW"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QSU-ak-IEQ" appends="YES" id="z4a-8C-YGD"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="beu-NL-K2X"/>
                     <connections>
+                        <outlet property="backBtn" destination="Be8-2P-tRg" id="Ghu-fR-tY7"/>
                         <outlet property="textURL" destination="MpB-uT-bYR" id="vpI-bw-kzZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a21-BM-aIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="QSU-ak-IEQ">
+                    <connections>
+                        <action selector="returnGesture:" destination="C52-t3-Zfn" id="u0l-zI-4xZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6180" y="-1124"/>
         </scene>
@@ -201,11 +211,14 @@
                             <constraint firstItem="s6k-kt-nNW" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ZRE-p5-LVW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hub" image="ic_menu_home.png" id="mUy-sR-IYB"/>
+                    <tabBarItem key="tabBarItem" title="Hub" image="Hub.png" id="mUy-sR-IYB">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectView" destination="s6k-kt-nNW" id="g2W-kL-Z0J"/>
                         <outlet property="login" destination="Uen-90-eap" id="8tJ-2L-bcR"/>
+                        <outlet property="tabItemHub" destination="mUy-sR-IYB" id="Rao-7I-niQ"/>
                         <segue destination="t9x-KD-kgC" kind="show" identifier="showSubmission" id="P6b-pR-6nx"/>
                     </connections>
                 </viewController>
@@ -242,6 +255,11 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-fU-4Y2">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bdf-RO-ta4" appends="YES" id="bgQ-Mw-TbC"/>
+                                    <outletCollection property="gestureRecognizers" destination="x1v-Wc-uC1" appends="YES" id="2kf-Ou-xzC"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -257,10 +275,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="v4h-sl-z6f"/>
                     <connections>
+                        <outlet property="backBtn" destination="Z0Z-b8-2Ae" id="ees-ph-q4o"/>
                         <outlet property="webBrowser" destination="n2f-fU-4Y2" id="B4U-LW-FXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzJ-rW-aGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="bdf-RO-ta4">
+                    <connections>
+                        <action selector="returnGesture:" destination="t9x-KD-kgC" id="Uvh-gt-RwH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="x1v-Wc-uC1"/>
             </objects>
             <point key="canvasLocation" x="6180" y="-450"/>
         </scene>
@@ -281,7 +306,7 @@
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Chreytli Gaming" id="zg9-r6-zqs">
-                                        <barButtonItem key="leftBarButtonItem" id="Sd6-or-iDo">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Sd6-or-iDo">
                                             <connections>
                                                 <action selector="refreshTS:" destination="v7O-zv-GuN" id="4wZ-fu-VRF"/>
                                             </connections>
@@ -305,7 +330,7 @@
                             <constraint firstItem="yGT-EL-fHd" firstAttribute="top" secondItem="mFb-ws-qpi" secondAttribute="bottom" id="pfb-Al-nc9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gaming" image="icon-games-png.png" id="alJ-1q-ZxK"/>
+                    <tabBarItem key="tabBarItem" title="Gaming" image="Gaming.png" id="alJ-1q-ZxK"/>
                     <navigationItem key="navigationItem" title="Chreytli Gaming" id="o7d-w6-p8e"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -371,7 +396,9 @@
                             <constraint firstItem="LJA-BU-et0" firstAttribute="top" secondItem="QJD-0A-4TN" secondAttribute="bottom" id="r94-ts-Ay4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png" id="MfS-mr-c7u"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Events.png" id="MfS-mr-c7u">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="2"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Lpi-Vv-B9l" id="fDP-Vb-ADe"/>
@@ -403,8 +430,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png" width="48" height="48"/>
-        <image name="ic_menu_home.png" width="48" height="48"/>
-        <image name="icon-games-png.png" width="50" height="50"/>
+        <image name="Events.png" width="41" height="44"/>
+        <image name="Gaming.png" width="44" height="31"/>
+        <image name="Hub.png" width="44" height="36"/>
     </resources>
 </document>

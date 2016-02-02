@@ -15,10 +15,6 @@ class GamingViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let teas = [ NSFontAttributeName: UIFont(name: "FontAwesome", size: 20)!]
-        
-        refresh.setTitleTextAttributes(teas, forState: UIControlState.Normal)
-        refresh.title = "\u{f021}"
         
         browserLoad()
 

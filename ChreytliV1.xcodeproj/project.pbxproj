@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A07F7681C5CEFBC0019856C /* icon-games-png.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A07F7661C5CEFBC0019856C /* icon-games-png.png */; };
-		8A07F76E1C5CF0F60019856C /* ic_menu_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A07F76D1C5CF0F60019856C /* ic_menu_home.png */; };
 		8A07F7701C5CF4FB0019856C /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07F76F1C5CF4FB0019856C /* CustomCellView.swift */; };
-		8A07F7741C5D04A30019856C /* 7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A07F7731C5D04A30019856C /* 7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png */; };
 		8A07F7761C5D050A0019856C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07F7751C5D050A0019856C /* EventViewController.swift */; };
 		8A8C41791C5B99D60050B5D4 /* GamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C41781C5B99D60050B5D4 /* GamingViewController.swift */; };
 		8A8C41831C5BA71B0050B5D4 /* home.html in Resources */ = {isa = PBXBuildFile; fileRef = 8A8C41821C5BA71B0050B5D4 /* home.html */; };
 		8ABCD1361C5F6E1400B0FB2D /* SwiftLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABCD1351C5F6E1400B0FB2D /* SwiftLoading.swift */; };
 		8ACDB0EB1C5E1F650088A0AC /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDB0EA1C5E1F650088A0AC /* SubmitViewController.swift */; };
 		8ACDB0ED1C5E2A020088A0AC /* PostSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDB0EC1C5E2A020088A0AC /* PostSubViewController.swift */; };
+		8ACDBF5B1C60C40400E620D4 /* Events.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ACDBF581C60C40400E620D4 /* Events.png */; };
+		8ACDBF5C1C60C40400E620D4 /* Gaming.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ACDBF591C60C40400E620D4 /* Gaming.png */; };
+		8ACDBF5D1C60C40400E620D4 /* Hub.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ACDBF5A1C60C40400E620D4 /* Hub.png */; };
 		8ACDE0D81C5521AD0013F888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDE0D71C5521AD0013F888 /* AppDelegate.swift */; };
 		8ACDE0DA1C5521AD0013F888 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDE0D91C5521AD0013F888 /* ViewController.swift */; };
 		8ACDE0DD1C5521AD0013F888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACDE0DB1C5521AD0013F888 /* Main.storyboard */; };
@@ -30,16 +30,16 @@
 /* Begin PBXFileReference section */
 		2EF4F4D659EEB2F51174B575 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		45019574C113ECF2A611DB0A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		8A07F7661C5CEFBC0019856C /* icon-games-png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-games-png.png"; sourceTree = "<group>"; };
-		8A07F76D1C5CF0F60019856C /* ic_menu_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu_home.png; sourceTree = "<group>"; };
 		8A07F76F1C5CF4FB0019856C /* CustomCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
-		8A07F7731C5D04A30019856C /* 7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png"; sourceTree = "<group>"; };
 		8A07F7751C5D050A0019856C /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8A8C41781C5B99D60050B5D4 /* GamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamingViewController.swift; sourceTree = "<group>"; };
 		8A8C41821C5BA71B0050B5D4 /* home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = home.html; sourceTree = "<group>"; };
 		8ABCD1351C5F6E1400B0FB2D /* SwiftLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoading.swift; sourceTree = "<group>"; };
 		8ACDB0EA1C5E1F650088A0AC /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		8ACDB0EC1C5E2A020088A0AC /* PostSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSubViewController.swift; sourceTree = "<group>"; };
+		8ACDBF581C60C40400E620D4 /* Events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Events.png; sourceTree = "<group>"; };
+		8ACDBF591C60C40400E620D4 /* Gaming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gaming.png; sourceTree = "<group>"; };
+		8ACDBF5A1C60C40400E620D4 /* Hub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hub.png; sourceTree = "<group>"; };
 		8ACDE0D41C5521AD0013F888 /* ChreytliV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChreytliV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACDE0D71C5521AD0013F888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ACDE0D91C5521AD0013F888 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +75,9 @@
 		8A07F7601C5CEEA40019856C /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				8A07F7731C5D04A30019856C /* 7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png */,
-				8A07F76D1C5CF0F60019856C /* ic_menu_home.png */,
-				8A07F7661C5CEFBC0019856C /* icon-games-png.png */,
+				8ACDBF581C60C40400E620D4 /* Events.png */,
+				8ACDBF591C60C40400E620D4 /* Gaming.png */,
+				8ACDBF5A1C60C40400E620D4 /* Hub.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -218,14 +218,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ACDBF5B1C60C40400E620D4 /* Events.png in Resources */,
+				8ACDBF5D1C60C40400E620D4 /* Hub.png in Resources */,
 				8AF6AA2E1C5FC25500AEF734 /* fontawesome-webfont.ttf in Resources */,
 				8ACDE0E21C5521AD0013F888 /* LaunchScreen.storyboard in Resources */,
+				8ACDBF5C1C60C40400E620D4 /* Gaming.png in Resources */,
 				8A8C41831C5BA71B0050B5D4 /* home.html in Resources */,
 				8ACDE0DF1C5521AD0013F888 /* Assets.xcassets in Resources */,
-				8A07F7681C5CEFBC0019856C /* icon-games-png.png in Resources */,
-				8A07F7741C5D04A30019856C /* 7-Calendar-interface-symbol-with-squares-in-rounded-rectangular-shape-with-spring-on-top-border.png in Resources */,
 				8ACDE0DD1C5521AD0013F888 /* Main.storyboard in Resources */,
-				8A07F76E1C5CF0F60019856C /* ic_menu_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
